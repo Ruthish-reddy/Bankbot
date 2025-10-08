@@ -1,0 +1,24 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SafeBank - Chat</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="modern chat-page">
+  <div class="chat-container">
+    <h3>BankBot Assistant</h3>
+    <form method="post">
+      <textarea name="message" placeholder="Ask about balance, transactions or branches..." required></textarea>
+      <button class="primary">Send</button>
+    </form>
+    {% if reply %}
+      <div class="reply"><strong>BankBot:</strong> {{ reply }}</div>
+    {% endif %}
+    <div style="margin-top:1rem">
+      <a href="{{ url_for('dashboard') }}" class="ghost">Back to dashboard</a>
+    </div>
+  </div>
+</body>
+</html>

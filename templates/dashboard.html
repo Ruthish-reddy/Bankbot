@@ -1,0 +1,32 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SafeBank - Dashboard</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="modern">
+  <nav>
+    <div class="brand">SafeBank</div>
+    <div class="nav-right">
+      <span>Welcome, {{user}}</span>
+      <a href="{{ url_for('logout') }}" class="ghost">Logout</a>
+    </div>
+  </nav>
+  <main>
+    <section class="panel">
+      <h2>Account Overview</h2>
+      <div class="tiles">
+        <div class="tile">Balance<br><strong>₹50,000</strong></div>
+        <div class="tile">Transactions<br><small>Last 7 days</small></div>
+        <div class="tile">Branches<br><small>5 nearby</small></div>
+      </div>
+    </section>
+    <section class="panel">
+      <h2>Chat with BankBot</h2>
+      <iframe src="{{ url_for('chat') }}" class="chatframe"></iframe>
+    </section>
+  </main>
+</body>
+</html>
